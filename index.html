@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>3公里 HYROX 體能體驗紀錄平台</title>
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+    body { font-family: 'Noto Sans TC', sans-serif; -webkit-tap-highlight-color: transparent; }
+    .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen pb-12">
+
+  <!-- Header 標題列 -->
+  <header class="bg-amber-600 text-white shadow-lg">
+    <div class="max-w-4xl mx-auto px-4 py-5 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div>
+        <h1 class="text-xl sm:text-2xl font-black tracking-wide flex items-center justify-center sm:justify-start gap-2">
+          <i class="fa-solid fa-bolt text-yellow-300"></i>
+          3公里 HYROX 體能體驗紀錄平台
+        </h1>
+        <p class="text-amber-100 text-xs sm:text-sm mt-1">功能性體能競賽 • 關卡分站計時 • RPE 感知評估 • 歷程紀錄</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-3 sm:px-4 mt-6 space-y-6">
+
+    <!-- 區塊 1: 3公里 HYROX 體驗內容與運動科學說明 -->
+    <section class="bg-white rounded-xl shadow-sm p-4 sm:p-6 border border-slate-200">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900 mb-2 flex items-center gap-2 border-b pb-2">
+        <i class="fa-solid fa-circle-info text-amber-600"></i>
+        3公里 HYROX 體驗關卡說明
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 mb-4">
+        HYROX 是目前全球極熱門的「功能性體能競賽」，核心架構為 <strong>「跑步/心肺（Cardio Running）+ 功能性體能動作（Functional Fitness Movements）」</strong> 的循環交替。
+      </p>
+
+      <!-- 關卡詳細表格 -->
+      <div class="table-responsive">
+        <table class="w-full text-xs text-left border-collapse border border-slate-200 min-w-[650px]">
+          <thead>
+            <tr class="bg-amber-500 text-white font-bold">
+              <th class="p-2 border border-amber-600 w-12 text-center">順序</th>
+              <th class="p-2 border border-amber-600 w-28">關卡名稱</th>
+              <th class="p-2 border border-amber-600">運動內容與規範</th>
+              <th class="p-2 border border-amber-600">運動科學與體適能目標</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            <tr class="bg-slate-50 font-semibold">
+              <td class="p-2 border text-center">暖身</td>
+              <td class="p-2 border text-amber-700">Warm-up</td>
+              <td class="p-2 border">開合跳*30 、深蹲*15、關節活動度伸展、100m 慢跑或漸進加速跑</td>
+              <td class="p-2 border">提升核心體溫、喚醒神經肌肉控制與關節活動度。</td>
+            </tr>
+            <tr>
+              <td class="p-2 border text-center font-bold">01</td>
+              <td class="p-2 border font-bold text-indigo-700">Run 1</td>
+              <td class="p-2 border">外圈跑道跑 400m * 1</td>
+              <td class="p-2 border">啟動心肺系統，進入預熱狀態。</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="p-2 border text-center font-bold">02</td>
+              <td class="p-2 border font-bold text-amber-800">Station 1</td>
+              <td class="p-2 border">Burpee Broad Jump 波比立定跳遠/立定跳遠/ 前進 20 公尺</td>
+              <td class="p-2 border">下肢三關節爆發力與全身無氧代謝。</td>
+            </tr>
+            <tr>
+              <td class="p-2 border text-center font-bold">02</td>
+              <td class="p-2 border font-bold text-indigo-700">Run 2</td>
+              <td class="p-2 border">外圈跑道跑 200m</td>
+              <td class="p-2 border">考驗波比跳後的「心率控制」與配速。</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="p-2 border text-center font-bold">03</td>
+              <td class="p-2 border font-bold text-amber-800">Station 2</td>
+              <td class="p-2 border">Walking Lunges 弓箭步走 30 公尺</td>
+              <td class="p-2 border">股四頭肌與臀大肌離心收縮、單腳穩定度。</td>
+            </tr>
+            <tr>
+              <td class="p-2 border text-center font-bold">03</td>
+              <td class="p-2 border font-bold text-indigo-700">Run 3</td>
+              <td class="p-2 border">外圈跑道跑 200m</td>
+              <td class="p-2 border">強化乳酸清除速率與心肺耐力。</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="p-2 border text-center font-bold">04</td>
+              <td class="p-2 border font-bold text-amber-800">Station 3</td>
+              <td class="p-2 border">Farmers Carry 農夫走負重 30 公尺（雙手提重物）<br><span class="text-slate-500">*雙人合作：手推車 15m 換人或雙人搬運 30m</span></td>
+              <td class="p-2 border">核心抗側屈能力、握力與上背肌耐力。</td>
+            </tr>
+            <tr>
+              <td class="p-2 border text-center font-bold">04</td>
+              <td class="p-2 border font-bold text-indigo-700">Run 4</td>
+              <td class="p-2 border">外圈跑道跑 200m</td>
+              <td class="p-2 border">維持高度代謝率與心率（RPE 15-17）。</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="p-2 border text-center font-bold">05</td>
+              <td class="p-2 border font-bold text-amber-800">Station 4</td>
+              <td class="p-2 border">引體向上*30下 或 (懸垂20秒＋高抬腿60秒)</td>
+              <td class="p-2 border">上體水平拉力肌群（背肌/後肩）與高頻率心肺刺激。</td>
+            </tr>
+            <tr>
+              <td class="p-2 border text-center font-bold">05</td>
+              <td class="p-2 border font-bold text-indigo-700">Run 5</td>
+              <td class="p-2 border">外圈跑道跑 200m</td>
+              <td class="p-2 border">挑戰最大攝氧量（VO2max）極限。</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="p-2 border text-center font-bold">06</td>
+              <td class="p-2 border font-bold text-amber-800">Station 5</td>
+              <td class="p-2 border">Thruster / Wall Ball 火箭蹲 20 次</td>
+              <td class="p-2 border">全身性推力與下肢力傳遞至上半身。</td>
+            </tr>
+            <tr>
+              <td class="p-2 border text-center font-bold">06</td>
+              <td class="p-2 border font-bold text-indigo-700">Run 6</td>
+              <td class="p-2 border">外圈跑道跑 400m * 1</td>
+              <td class="p-2 border">意志力與極限心肺耐力展現。</td>
+            </tr>
+            <tr class="bg-amber-50/50">
+              <td class="p-2 border text-center font-bold">07</td>
+              <td class="p-2 border font-bold text-amber-800">Station 6</td>
+              <td class="p-2 border">Plank Hold + Push-ups 棒式支撐 30秒 + 伏地挺身 10次 = 1組*3</td>
+              <td class="p-2 border">核心穩定度與胸大肌/三頭肌肌耐力。</td>
+            </tr>
+            <tr class="bg-emerald-50 font-bold text-emerald-900">
+              <td class="p-2 border text-center">07</td>
+              <td class="p-2 border text-emerald-700">Final Run</td>
+              <td class="p-2 border">最終 200m 衝刺至終點</td>
+              <td class="p-2 border">全力衝刺，完成 HYROX 挑戰！</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 區塊 2: 學生紀錄上傳表單 -->
+    <section class="bg-white rounded-xl shadow-sm p-4 sm:p-6 border border-slate-200">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900 mb-4 pb-2 border-b flex items-center gap-2">
+        <i class="fa-solid fa-stopwatch text-amber-600"></i>
+        填寫 HYROX 各站時間與 RPE 評估
+      </h2>
+
+      <form id="hyroxForm" class="space-y-5">
+        <!-- 基本資料 -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">班級 / 組別</label>
+            <input type="text" id="className" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="例如: 體育(一)A組">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">學號</label>
+            <input type="text" id="studentId" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="例如: 1120101">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">姓名</label>
+            <input type="text" id="name" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="例如: 王小明">
+          </div>
+        </div>
+
+        <!-- 各站時間與 RPE 表單 -->
+        <div class="space-y-3">
+          <label class="block text-xs font-bold text-slate-800">各站費時與 RPE 自我感覺努力程度：</label>
+
+          <div class="table-responsive">
+            <table class="w-full text-xs text-left border-collapse border border-slate-200 min-w-[500px]">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 border-b">
+                  <th class="p-2 border w-32">關卡名稱</th>
+                  <th class="p-2 border w-40">花費時間 (分:秒)</th>
+                  <th class="p-2 border">RPE 強度選擇 ( Borg 6-20 量表 )</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <!-- Station 1 -->
+                <tr>
+                  <td class="p-2 border font-bold text-amber-800">Station 1: 波比立定跳遠</td>
+                  <td class="p-2 border">
+                    <div class="flex items-center gap-1">
+                      <input type="number" min="0" max="59" placeholder="分" class="st-m w-12 border rounded p-1 text-center" value="1"> 分
+                      <input type="number" min="0" max="59" placeholder="秒" class="st-s w-12 border rounded p-1 text-center" value="30"> 秒
+                    </div>
+                  </td>
+                  <td class="p-2 border">
+                    <select class="st-rpe w-full border rounded p-1">
+                      <option value="RPE 11 (輕鬆)">RPE 11 - 輕鬆 (能正常對話)</option>
+                      <option value="RPE 13 (有點辛苦)">RPE 13 - 有點辛苦 (呼吸稍快)</option>
+                      <option value="RPE 15 (辛苦)" selected>RPE 15 - 辛苦 (喘氣流汗)</option>
+                      <option value="RPE 17 (非常辛苦)">RPE 17 - 非常辛苦 (非常喘)</option>
+                      <option value="RPE 19 (極度辛苦)">RPE 19 - 極度辛苦 (接近極限)</option>
+                    </select>
+                  </td>
+                </tr>
+                <!-- Station 2 -->
+                <tr>
+                  <td class="p-2 border font-bold text-amber-800">Station 2: 弓箭步走 30m</td>
+                  <td class="p-2 border">
+                    <div class="flex items-center gap-1">
+                      <input type="number" min="0" max="59" placeholder="分" class="st-m w-12 border rounded p-1 text-center" value="1"> 分
+                      <input type="number" min="0" max="59" placeholder="秒" class="st-s w-12 border rounded p-1 text-center" value="15"> 秒
+                    </div>
+                  </td>
+                  <td class="p-2 border">
+                    <select class="st-rpe w-full border rounded p-1">
+                      <option value="RPE 11 (輕鬆)">RPE 11 - 輕鬆</option>
+                      <option value="RPE 13 (有點辛苦)" selected>RPE 13 - 有點辛苦</option>
+                      <option value="RPE 15 (辛苦)">RPE 15 - 辛苦</option>
+                      <option value="RPE 17 (非常辛苦)">RPE 17 - 非常辛苦</option>
+                      <option value="RPE 19 (極度辛苦)">RPE 19 - 極度辛苦</option>
+                    </select>
+                  </td>
+                </tr>
+                <!-- Station 3 -->
+                <tr>
+                  <td class="p-2 border font-bold text-amber-800">Station 3: 農夫走/雙人合作</td>
+                  <td class="p-2 border">
+                    <div class="flex items-center gap-1">
+                      <input type="number" min="0" max="59" placeholder="分" class="st-m w-12 border rounded p-1 text-center" value="1"> 分
+                      <input type="number" min="0" max="59" placeholder="秒" class="st-s w-12 border rounded p-1 text-center" value="00"> 秒
+                    </div>
+                  </td>
+                  <td class="p-2 border">
+                    <select class="st-rpe w-full border rounded p-1">
+                      <option value="RPE 11 (輕鬆)">RPE 11 - 輕鬆</option>
+                      <option value="RPE 13 (有點辛苦)" selected>RPE 13 - 有點辛苦</option>
+                      <option value="RPE 15 (辛苦)">RPE 15 - 辛苦</option>
+                      <option value="RPE 17 (非常辛苦)">RPE 17 - 非常辛苦</option>
+                    </select>
+                  </td>
+                </tr>
+                <!-- Station 4 -->
+                <tr>
+                  <td class="p-2 border font-bold text-amber-800">Station 4: 引體/懸垂+高抬腿</td>
+                  <td class="p-2 border">
+                    <div class="flex items-center gap-1">
+                      <input type="number" min="0" max="59" placeholder="分" class="st-m w-12 border rounded p-1 text-center" value="1"> 分
+                      <input type="number" min="0" max="59" placeholder="秒" class="st-s w-12 border rounded p-1 text-center" value="45"> 秒
+                    </div>
+                  </td>
+                  <td class="p-2 border">
+                    <select class="st-rpe w-full border rounded p-1">
+                      <option value="RPE 13 (有點辛苦)">RPE 13 - 有點辛苦</option>
+                      <option value="RPE 15 (辛苦)" selected>RPE 15 - 辛苦</option>
+                      <option value="RPE 17 (非常辛苦)">RPE 17 - 非常辛苦</option>
+                    </select>
+                  </td>
+                </tr>
+                <!-- Station 5 -->
+                <tr>
+                  <td class="p-2 border font-bold text-amber-800">Station 5: 火箭蹲 20次</td>
+                  <td class="p-2 border">
+                    <div class="flex items-center gap-1">
+                      <input type="number" min="0" max="59" placeholder="分" class="st-m w-12 border rounded p-1 text-center" value="1"> 分
+                      <input type="number" min="0" max="59" placeholder="秒" class="st-s w-12 border rounded p-1 text-center" value="20"> 秒
+                    </div>
+                  </td>
+                  <td class="p-2 border">
+                    <select class="st-rpe w-full border rounded p-1">
+                      <option value="RPE 13 (有點辛苦)">RPE 13 - 有點辛苦</option>
+                      <option value="RPE 15 (辛苦)" selected>RPE 15 - 辛苦</option>
+                      <option value="RPE 17 (非常辛苦)">RPE 17 - 非常辛苦</option>
+                    </select>
+                  </td>
+                </tr>
+                <!-- Station 6 -->
+                <tr>
+                  <td class="p-2 border font-bold text-amber-800">Station 6: 棒式+伏地挺身</td>
+                  <td class="p-2 border">
+                    <div class="flex items-center gap-1">
+                      <input type="number" min="0" max="59" placeholder="分" class="st-m w-12 border rounded p-1 text-center" value="2"> 分
+                      <input type="number" min="0" max="59" placeholder="秒" class="st-s w-12 border rounded p-1 text-center" value="30"> 秒
+                    </div>
+                  </td>
+                  <td class="p-2 border">
+                    <select class="st-rpe w-full border rounded p-1">
+                      <option value="RPE 15 (辛苦)">RPE 15 - 辛苦</option>
+                      <option value="RPE 17 (非常辛苦)" selected>RPE 17 - 非常辛苦</option>
+                      <option value="RPE 19 (極度辛苦)">RPE 19 - 極度辛苦</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 總耗時與整體心得 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">總完賽時間 (分:秒)</label>
+            <div class="flex items-center gap-2">
+              <input type="number" id="totalMin" required min="1" max="180" value="25" class="w-20 px-2 py-1.5 border rounded text-sm bg-white"> 分
+              <input type="number" id="totalSec" required min="0" max="59" value="40" class="w-20 px-2 py-1.5 border rounded text-sm bg-white"> 秒
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">整體運動心得與反思</label>
+            <input type="text" id="note" class="w-full px-3 py-1.5 border rounded text-sm bg-white" placeholder="例如：第 5 站火箭蹲後跑步心率拉非常高，靠呼吸調節完成。">
+          </div>
+        </div>
+
+        <!-- 照片佐證上傳區 -->
+        <div class="p-3 bg-slate-50 border border-dashed border-slate-300 rounded-lg">
+          <label class="block text-xs font-bold text-slate-700 mb-2">
+            <i class="fa-solid fa-camera text-amber-600 mr-1"></i> 上傳現場體驗佐證照片 / 運動手環數據截圖：
+          </label>
+          <input type="file" id="photoInput" accept="image/*" class="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100 cursor-pointer">
+          <div id="photoPreviewContainer" class="mt-3 hidden">
+            <p class="text-[11px] text-slate-500 mb-1">照片預覽（系統已自動最佳化壓縮）：</p>
+            <img id="photoPreview" class="h-28 rounded border shadow-sm object-cover">
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-lg shadow transition flex items-center justify-center gap-2 text-sm">
+          <i class="fa-solid fa-cloud-arrow-up"></i> 提交 3公里 HYROX 紀錄並同步雲端
+        </button>
+      </form>
+    </section>
+
+    <!-- 區塊 3: 個人歷程與數據統計 -->
+    <section class="bg-white rounded-xl shadow-sm p-4 sm:p-6 border border-slate-200">
+      <div class="flex justify-between items-center mb-4 pb-2 border-b">
+        <h2 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+          <i class="fa-solid fa-chart-line text-emerald-600"></i>
+          個人 HYROX 體能歷程與成就統計
+        </h2>
+        <button id="queryBtn" class="text-xs bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-300 px-3 py-1.5 rounded-lg transition">
+          <i class="fa-solid fa-rotate mr-1"></i>載入 / 重新整理歷程
+        </button>
+      </div>
+
+      <!-- 成就統計卡片 -->
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <div class="p-3.5 bg-amber-50 rounded-xl border border-amber-200 flex items-center gap-3">
+          <div class="w-10 h-10 bg-amber-600 text-white rounded-lg flex items-center justify-center text-lg shadow-sm shrink-0">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div>
+            <p class="text-[10px] sm:text-xs font-semibold text-amber-800">總累計完成次數</p>
+            <p id="totalWorkoutCount" class="text-lg sm:text-xl font-black text-amber-950">0 <span class="text-xs font-normal">次</span></p>
+          </div>
+        </div>
+
+        <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center gap-3">
+          <div class="w-10 h-10 bg-emerald-600 text-white rounded-lg flex items-center justify-center text-lg shadow-sm shrink-0">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div>
+            <p class="text-[10px] sm:text-xs font-semibold text-emerald-800">總累計運動分鐘數</p>
+            <p id="totalWorkoutMinutes" class="text-lg sm:text-xl font-black text-emerald-950">0 <span class="text-xs font-normal">分鐘</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 歷程時間軸 -->
+      <div id="historyListContainer" class="space-y-3">
+        <p class="text-xs text-slate-400 italic">填寫學號並點擊「提交紀錄」或「載入歷程」即可檢視個人歷程與分數數據。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let selectedPhotoBase64 = "";
+    let selectedPhotoName = "";
+
+    // 圖片壓縮
+    document.getElementById('photoInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        selectedPhotoName = file.name;
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            let width = img.width;
+            let height = img.height;
+            const MAX_SIZE = 800;
+
+            if (width > height) {
+              if (width > MAX_SIZE) { height *= MAX_SIZE / width; width = MAX_SIZE; }
+            } else {
+              if (height > MAX_SIZE) { width *= MAX_SIZE / height; height = MAX_SIZE; }
+            }
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+
+            selectedPhotoBase64 = canvas.toDataURL('image/jpeg', 0.6);
+            document.getElementById('photoPreview').src = selectedPhotoBase64;
+            document.getElementById('photoPreviewContainer').classList.remove('hidden');
+          };
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // 彙整各站時間與 RPE
+    function getStationsData() {
+      const ms = document.querySelectorAll('.st-m');
+      const ss = document.querySelectorAll('.st-s');
+      const rpes = document.querySelectorAll('.st-rpe');
+      const names = [
+        "Station 1 (波比跳遠)", "Station 2 (弓箭步走)", 
+        "Station 3 (農夫走/合作)", "Station 4 (引體/高抬腿)", 
+        "Station 5 (火箭蹲)", "Station 6 (棒式/伏地挺身)"
+      ];
+
+      let details = [];
+      names.forEach((name, idx) => {
+        const m = ms[idx]?.value || '0';
+        const s = ss[idx]?.value || '0';
+        const rpe = rpes[idx]?.value || '';
+        details.push(`${name}: ${m}分${s}秒 (${rpe})`);
+      });
+      return details.join(' | ');
+    }
+
+    // 提交表單
+    document.getElementById('hyroxForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "上傳資料與照片中 (請稍候)...";
+
+      const totalM = document.getElementById('totalMin').value || '0';
+      const totalS = document.getElementById('totalSec').value || '0';
+
+      const payload = {
+        className: document.getElementById('className').value,
+        studentId: document.getElementById('studentId').value,
+        name: document.getElementById('name').value,
+        totalTime: `${totalM}分${totalS}秒`,
+        totalMinutesNum: parseInt(totalM) || 0,
+        stationDetails: getStationsData(),
+        note: document.getElementById('note').value,
+        photoBase64: selectedPhotoBase64,
+        photoName: selectedPhotoName
+      };
+
+      fetch(window.location.href, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        alert('✅ 3公里 HYROX 體驗紀錄與照片已成功上傳同步！');
+        selectedPhotoBase64 = "";
+        selectedPhotoName = "";
+        document.getElementById('photoInput').value = "";
+        document.getElementById('photoPreviewContainer').classList.add('hidden');
+        
+        setTimeout(() => { fetchHistory(payload.studentId); }, 1200);
+      })
+      .catch(err => { alert('❌ 上傳失敗：' + err.message); })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> 提交 3公里 HYROX 紀錄並同步雲端';
+      });
+    });
+
+    document.getElementById('queryBtn').addEventListener('click', function() {
+      const studentId = document.getElementById('studentId').value.trim();
+      if (!studentId) {
+        alert("請先填寫【學號】再進行查詢！");
+        return;
+      }
+      fetchHistory(studentId);
+    });
+
+    function fetchHistory(studentId) {
+      const script = document.createElement('script');
+      script.src = `${window.location.href}?studentId=${encodeURIComponent(studentId)}&callback=handleHistoryResponse&t=${new Date().getTime()}`;
+      document.body.appendChild(script);
+      script.onload = () => script.remove();
+    }
+
+    window.handleHistoryResponse = function(data) {
+      if (data.result === "success" && data.history) {
+        renderHistoryList(data.history);
+      } else {
+        alert("查無歷史紀錄，或讀取失敗。");
+      }
+    };
+
+    function renderHistoryList(history) {
+      const container = document.getElementById('historyListContainer');
+      let totalMinutesSum = 0;
+      let totalCount = history.length;
+
+      if (totalCount === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic">目前無 HYROX 體能歷史紀錄。</p>`;
+        document.getElementById('totalWorkoutCount').innerHTML = `0 <span class="text-xs font-normal">次</span>`;
+        document.getElementById('totalWorkoutMinutes').innerHTML = `0 <span class="text-xs font-normal">分鐘</span>`;
+        return;
+      }
+
+      let html = "";
+      history.forEach((item, idx) => {
+        totalMinutesSum += Number(item.totalMinutesNum) || 0;
+
+        const photoBtn = (item.photoUrl && item.photoUrl.indexOf('http') === 0)
+          ? `<a href="${item.photoUrl}" target="_blank" class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded hover:underline"><i class="fa-solid fa-image mr-1"></i>檢視佐證照片</a>`
+          : '<span class="text-xs text-slate-400">無佐證照片</span>';
+
+        const stationTags = item.stationDetails ? item.stationDetails.split('|').map(s => `
+          <div class="inline-block bg-amber-50 text-amber-900 border border-amber-200 text-[11px] px-2 py-0.5 rounded mr-1 mb-1">
+            ${s.trim()}
+          </div>
+        `).join('') : '';
+
+        html += `
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 border-l-4 border-l-amber-600">
+            <div class="flex justify-between items-center mb-1.5 flex-wrap gap-1">
+              <span class="text-xs font-bold text-slate-800">
+                #${idx + 1} | 完賽時間：<span class="text-amber-700 font-black text-sm">${item.totalTime}</span> (${item.timestamp})
+              </span>
+              ${photoBtn}
+            </div>
+            <div class="mt-1">${stationTags}</div>
+            ${item.note ? `<p class="text-xs text-slate-600 mt-1 bg-white p-1.5 rounded border"><i class="fa-regular fa-comment text-amber-600 mr-1"></i>心得：${item.note}</p>` : ''}
+          </div>
+        `;
+      });
+
+      document.getElementById('totalWorkoutCount').innerHTML = `${totalCount} <span class="text-xs font-normal">次</span>`;
+      document.getElementById('totalWorkoutMinutes').innerHTML = `${totalMinutesSum} <span class="text-xs font-normal">分鐘</span>`;
+      container.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
